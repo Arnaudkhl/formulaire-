@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    font-family: FiraSans, Helvetica, sans-serif;
+    background-image: url(./images/wallpaper.jpg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.parrainage-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 590px;
+    height: 350px;
+    background:rgba(255,255,255,0.7);
+    }
+
+.form-formulaire{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    }
+.form-input{
+    background-color: transparent;
+    box-shadow: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #f03;
+    width: 280px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 0;
+    line-height: 3em;
+    font-style: italic;
+    height: 50px;
+    text-transform: uppercase;
+
+    }
+button{
+    
+    background-color: #f03 ;
+    color: #ffffff;
+    border: none;
+    width: 300px ;
+    height: 50px ;
+    font-size: 20px;
+    border-radius: 18px;
+    margin-top: 20px;
+    text-transform: uppercase; 
+    transition: all .2s; 
+    
+    }
+/*Je me suis permis de rajouter une animation pour le bouton  */
+button:hover {
+        transform: scale(0.9);
+        background-color: #fff;
+        color: black ;
+        border:solid red 1px;
+        }
+.info{
+    font-style: italic;
+    color: grey;
+    text-align: left;
+    }
+p {
+    margin-right: 280px;
+    font-size: 13px;
+    }
+span{
+    font-size: 10px;
+    color: #f03;
+}
+
+@media screen and (max-width: 641px) {
+    .parrainage-form{
+       height: 420px;
+       width: 350px;
+    }
+    .form-input{
+        background-color: transparent;
+        box-shadow: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid #f03;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+        line-height: 3em;
+        font-style: italic;
+        text-transform: uppercase;
+    
+    }
+p {
+    margin-right: 170px;
+    }
+.btn{
+    width: 98%;
+    }
+}
+
+
+

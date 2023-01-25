@@ -1,0 +1,102 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulaire</title>
+</head>
+<body>
+    <div class="parrainage-form">
+      <div class="titre">
+        <h3>Formulaire de parrainage</h3>
+      </div>
+      <div class="container">
+      <!--debut du formulaire avec la balise form-->
+        <form action=""method="POST" class="form-formulaire" name="form1">
+            <div class="mail-para">
+                <label for="nom-parrain">
+                    <input class="form-input" type="text" name="nomParrain" placeholder="nom parrain*">
+                    <!--<small></small> -->
+                </label>
+
+                <label for="phone-filleul">
+                    <input class="form-input" type="text" name="phoneFilleul" placeholder="telephone filleul*">
+                    <!--<small></small> -->
+                </label>
+
+                <label for="email">
+                    <input class="form-input" type="text" name="email" placeholder=" email parrain">
+                    <!--<small></small> -->
+                </label>
+
+                <label for="nom-filleul">
+                    <input class="form-input" type="text" name="nomFilleul" placeholder=" nom filleul*">
+                    <!--<small></small> -->
+                </label>
+            </div>       
+        </form>   
+        <!-- fin du formulaire--> 
+      </div>
+       <!--le bouton pour valider le formulaire -->   
+      <button class="btn" onclick="validateForm()">
+        <a>ENVOYER</a>  
+      </button>
+     <div class="info">
+        <p>*Champs obligatoire</p>
+      </div>
+</div> 
+</body>
+
+<!--la partie javascript -->
+<script>
+  // la fonction qui va nous permettre afficher les messages d'erreur, de valider ou pas notre formulaire 
+  // Récupération du formulaire
+
+function validateForm() {
+   // Récupération des champs de saisie 
+  var email = document.form1.email.value;
+  var nomParrain = document.form1.nomParrain.value;
+  var phoneFilleul = document.form1.phoneFilleul.value;
+  var nomFilleul = document.form1.nomFilleul.value;
+  var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var phoneRegex = /^\d+$/;
+  var error = false;
+  
+
+   // Validation Email
+  if (!emailRegex.test(email)) {
+   // Affiche un message d'erreur
+    alert("Adresse email non conforme");
+    error = true;
+  }
+
+  // Vérifiez la longueur du nom du parrain
+  if (nomParrain.length === 0 || nomParrain.length > 50) {
+    // Affiche un message d'erreur
+    
+    error = true;
+  }else{
+    document.querySelector("#longueur").textContent = "longueur inférieur à 50"
+    alert(textAlert("nom-parrain"));
+    return false;
+  }
+
+ // Vérifiez la longueur du numéro de téléphone du filleul
+  if (!phoneRegex.test(phoneFilleul) || phoneFilleul.length !== 10) {
+    // Affiche un message d'erreur
+    alert("Numéro de téléphone non valide");
+    error = true;
+  }
+
+  // Vérifiez la longueur du nom du filleul
+  if (nomFilleul.length === 0 || nomFilleul.length > 50) {
+    // Affiche un message d'erreur
+    alert("Le nom du filleul doit avoir une longueur inférieure à 50");
+    error = true;
+  }
+  
+}
+</script>
+<!--fin du script -->
+</html>
